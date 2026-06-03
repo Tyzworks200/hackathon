@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hack With A Tone · LiveHub 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#04101F;color:#F0F4FA;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+#pts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.pt{position:absolute;border-radius:50%;animation:up linear infinite;opacity:0}
+@keyframes up{0%{transform:translateY(100vh);opacity:0}10%{opacity:1}90%{opacity:.4}100%{transform:translateY(-5vh);opacity:0}}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:orbanim 7s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;background:rgba(0,87,168,0.15);top:-130px;right:-130px}
+.o2{width:400px;height:400px;background:rgba(0,174,239,0.08);bottom:-100px;left:-100px;animation-delay:-3.5s}
+.o3{width:260px;height:260px;background:rgba(245,166,35,0.06);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-1.5s}
+@keyframes orbanim{0%{opacity:.5;transform:scale(1)}100%{opacity:1;transform:scale(1.15)}}
+nav{position:sticky;top:0;z-index:999;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(4,16,31,0.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,174,239,0.1)}
+.nlogo{height:24px;filter:brightness(0) invert(1);opacity:.82}
+.nlinks{display:flex;list-style:none;gap:1px}
+.nlinks a{font-size:12px;color:rgba(255,255,255,0.44);text-decoration:none;padding:6px 11px;border-radius:7px;transition:all .2s}
+.nlinks a:hover{color:#fff;background:rgba(255,255,255,0.05)}
+.ncta{background:linear-gradient(135deg,#0057A8,#00AEEF)!important;color:#fff!important;font-weight:600!important;border-radius:100px!important;padding:7px 18px!important;box-shadow:0 0 18px rgba(0,174,239,0.2)}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;padding:80px 20px 56px;position:relative;z-index:1;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 88% 68% at 50% 14%,rgba(0,87,168,0.24),transparent 64%);pointer-events:none}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,174,239,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,174,239,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
+.ebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(0,174,239,0.07);border:1px solid rgba(0,174,239,0.26);border-radius:100px;padding:5px 16px 5px 8px;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#00AEEF;margin-bottom:26px}
+.edot{width:7px;height:7px;border-radius:50%;background:#00AEEF;animation:blink 1.8s infinite;box-shadow:0 0 7px #00AEEF}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 7px #00AEEF}50%{opacity:.18;box-shadow:none}}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(48px,8.5vw,104px);line-height:.92;letter-spacing:-.024em;color:#fff;margin-bottom:8px}
+h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00AEEF,#70EEFF);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 26px rgba(0,174,239,0.42))}
+.hsub{font-family:'DM Serif Display',serif;font-size:clamp(17px,2.6vw,28px);font-style:italic;color:#F5A623;letter-spacing:.04em;margin-bottom:28px;text-shadow:0 0 26px rgba(245,166,35,0.38)}
+.htag{font-size:clamp(14px,1.7vw,17px);color:rgba(255,255,255,0.5);line-height:1.72;max-width:480px;margin:0 auto 42px}
+.htag strong{color:#fff;font-weight:500}
+.dates{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:38px}
+.dp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:15px;padding:14px 24px;text-align:center;min-width:142px;position:relative;overflow:hidden;transition:all .2s}
+.dp:hover{border-color:rgba(0,174,239,0.36);transform:translateY(-2px)}
+.dpl{font-size:9.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#00AEEF;margin-bottom:5px}
+.dpd{font-family:'DM Serif Display',serif;font-size:21px;color:#fff}
+.dps{font-size:9.5px;color:rgba(255,255,255,0.3);margin-top:3px}
+.btns{display:flex;flex-wrap:wrap;gap:11px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;padding:12px 26px;border-radius:100px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+.bgold{background:linear-gradient(135deg,#F5A623,#FFD060);color:#1A0D00;box-shadow:0 0 22px rgba(245,166,35,0.3)}
+.bgold:hover{transform:translateY(-2px);box-shadow:0 0 38px rgba(245,166,35,0.52)}
+.bghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.17)}
+.bghost:hover{border-color:rgba(0,174,239,0.48);background:rgba(0,174,239,0.07);transform:translateY(-2px)}
+.sec{padding:80px 20px;max-width:1020px;margin:0 auto;position:relative;z-index:1}
+.slabel{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#00AEEF;margin-bottom:9px}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(26px,4.2vw,48px);line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:13px}
+.ssub{font-size:15px;color:rgba(255,255,255,0.46);line-height:1.72;max-width:560px;margin-bottom:40px}
+.glow-hr{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(0,174,239,0.32),transparent);margin:0;position:relative;z-index:1}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:11px}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:17px;padding:22px;transition:all .22s}
+.card:hover{border-color:rgba(0,174,239,0.3);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,87,168,0.16)}
+.ci{width:38px;height:38px;border-radius:9px;background:rgba(0,87,168,0.18);border:1px solid rgba(0,87,168,0.28);display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:13px}
+.card h3{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:5px;line-height:1.3}
+.card p{font-size:12.5px;color:rgba(255,255,255,0.46);line-height:1.65}
+.brule{background:linear-gradient(135deg,rgba(0,174,239,0.07),rgba(0,87,168,0.11));border:1.5px solid rgba(0,174,239,0.2);border-radius:20px;padding:32px 36px;position:relative;overflow:hidden;margin-bottom:32px}
+.brule::before{content:'';position:absolute;top:0;left:15%;right:15%;height:2px;background:linear-gradient(90deg,transparent,#00AEEF,transparent)}
+.brule h3{font-family:'DM Serif Display',serif;font-size:21px;color:#fff;margin-bottom:8px}
+.brule p{font-size:13.5px;color:rgba(255,255,255,0.53);line-height:1.75}
+.brule strong{color:#fff}
+.steps{display:flex;flex-direction:column;gap:11px}
+.step{display:flex;gap:16px;align-items:flex-start;padding:18px 22px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;transition:all .2s}
+.step:hover{border-color:rgba(0,174,239,0.26);background:rgba(0,87,168,0.05)}
+.snum{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#0057A8,#00AEEF);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:16px;color:#fff;flex-shrink:0;box-shadow:0 0 12px rgba(0,174,239,0.25)}
+.stxt h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:3px}
+.stxt p{font-size:12.5px;color:rgba(255,255,255,0.46);line-height:1.6}
+.stxt p strong{color:#00AEEF;font-weight:600}
+.nbox{padding:14px 18px;background:rgba(0,174,239,0.05);border:1px solid rgba(0,174,239,0.15);border-radius:11px;margin-top:20px}
+.nbox p{font-size:12.5px;color:rgba(255,255,255,0.48);line-height:1.7}
+.sub-box{background:linear-gradient(135deg,rgba(245,166,35,0.08),rgba(0,87,168,0.13));border:2px solid rgba(245,166,35,0.28);border-radius:22px;padding:46px 40px;text-align:center;position:relative;overflow:hidden}
+.sub-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(245,166,35,.75),transparent)}
+.sub-box::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(245,166,35,.3),transparent)}
+.sub-box h2{margin-bottom:11px}
+.sub-box p{color:rgba(255,255,255,0.5);font-size:14.5px;margin-bottom:22px;line-height:1.65}
+.sub-box p strong{color:#fff}
+.dbadge{display:inline-block;background:rgba(245,166,35,0.11);border:1px solid rgba(245,166,35,0.38);color:#F5A623;font-family:'DM Serif Display',serif;font-size:17px;padding:10px 24px;border-radius:12px;margin-bottom:24px;box-shadow:0 0 20px rgba(245,166,35,0.12)}
+.uc{background:linear-gradient(135deg,rgba(245,166,35,0.05),rgba(0,87,168,0.07));border:1px solid rgba(245,166,35,0.17);border-radius:15px;padding:18px;transition:all .22s;position:relative;overflow:hidden}
+.uc:hover{border-color:rgba(245,166,35,0.38);transform:translateY(-2px)}
+.uci{font-size:20px;margin-bottom:8px}
+.uc h3{font-size:13.5px;font-weight:600;color:#F5A623;margin-bottom:4px}
+.uc p{font-size:11.5px;color:rgba(255,255,255,0.46);line-height:1.6}
+.rl{display:flex;flex-direction:column;gap:8px}
+.rl a{display:flex;align-items:center;gap:13px;padding:13px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;text-decoration:none;color:#fff;transition:all .2s}
+.rl a:hover{border-color:rgba(0,174,239,0.36);background:rgba(0,87,168,0.08);transform:translateX(3px)}
+.rli{width:34px;height:34px;border-radius:8px;background:rgba(0,87,168,0.17);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.rln{font-size:13.5px;font-weight:500;display:block;margin-bottom:2px}
+.rld{font-size:10.5px;color:rgba(255,255,255,0.34)}
+.rla{margin-left:auto;color:rgba(255,255,255,0.18);font-size:13px;flex-shrink:0}
+.scores{display:flex;flex-direction:column;gap:16px;max-width:620px}
+.srow{display:flex;align-items:center;gap:13px}
+.sname{width:210px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.76);flex-shrink:0;line-height:1.3}
+.strk{flex:1;height:6px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
+.sfil{height:100%;border-radius:100px;background:linear-gradient(90deg,#0057A8,#00AEEF)}
+.spct{font-size:13.5px;font-weight:700;color:#00AEEF;width:34px;text-align:right;flex-shrink:0}
+.pwrap{border-radius:18px;overflow:hidden;border:1px solid rgba(245,166,35,0.16)}
+table.ptbl{width:100%;border-collapse:collapse}
+table.ptbl th{background:linear-gradient(135deg,#0057A8,#003D7A);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:13px 18px;text-align:left}
+table.ptbl td{padding:14px 18px;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,0.06);vertical-align:middle}
+table.ptbl tbody tr{background:rgba(255,255,255,0.02);transition:background .15s}
+table.ptbl tbody tr:hover{background:rgba(0,87,168,0.09)}
+table.ptbl tbody tr:nth-child(even){background:rgba(255,255,255,0.04)}
+table.ptbl tbody tr:last-child td{border-bottom:none}
+.pamt{font-family:'DM Serif Display',serif;font-size:19px;color:#F5A623}
+.jcard{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:26px 20px;text-align:center;transition:all .22s;position:relative;overflow:hidden}
+.jcard:hover{border-color:rgba(0,174,239,0.3);transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,87,168,0.16)}
+.jav{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#0057A8,#00AEEF);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 13px;border:2px solid rgba(0,174,239,0.26);box-shadow:0 0 16px rgba(0,174,239,0.16)}
+.jcard h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px}
+.jrole{font-size:11.5px;color:#00AEEF;font-weight:500}
+.thbox{background:linear-gradient(135deg,rgba(0,87,168,0.13),rgba(0,174,239,0.07));border:1px solid rgba(0,174,239,0.17);border-radius:22px;padding:36px;position:relative;overflow:hidden}
+.thbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,174,239,0.65),transparent)}
+.thbox h3{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:4px}
+.thsub{color:#00AEEF;font-weight:500;font-size:13.5px;margin-bottom:13px}
+.tzrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.tz{background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.08);border-radius:11px;padding:11px 16px;min-width:112px}
+.tzr{font-size:8.5px;text-transform:uppercase;letter-spacing:.14em;color:#00AEEF;font-weight:700;margin-bottom:4px}
+.tzt{font-family:'DM Serif Display',serif;font-size:19px;color:#fff}
+.tzz{font-size:8.5px;color:rgba(255,255,255,0.28);margin-top:2px}
+.tc{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:15px;padding:18px;display:flex;flex-direction:column;gap:7px;transition:all .22s}
+.tc:hover{border-color:rgba(245,166,35,0.3);transform:translateY(-2px)}
+.ttop{display:flex;align-items:flex-start;gap:9px}
+.temi{font-size:20px;margin-top:2px}
+.tc h3{font-size:14px;font-weight:600;color:#fff;margin-bottom:1px}
+.ttag{display:inline-block;background:rgba(0,174,239,0.09);border:1px solid rgba(0,174,239,0.2);color:#00AEEF;font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:100px}
+.tc p{font-size:11.5px;color:rgba(255,255,255,0.42);line-height:1.65}
+.tc a{color:#00AEEF;font-size:11.5px;font-weight:600;text-decoration:none;margin-top:auto}
+.tip{background:rgba(0,87,168,0.08);border-left:3px solid #0057A8;border-radius:0 11px 11px 0;padding:16px 20px}
+.tip h4{font-size:12.5px;font-weight:600;color:#00AEEF;margin-bottom:6px}
+.tip pre{font-family:monospace;font-size:10.5px;color:rgba(255,255,255,0.54);background:rgba(0,0,0,0.27);padding:11px;border-radius:7px;white-space:pre-wrap;line-height:1.65;margin-top:5px}
+.abox{background:rgba(0,174,239,0.05);border:1.5px dashed rgba(0,174,239,0.24);border-radius:14px;padding:24px;display:flex;align-items:center;gap:16px}
+.adot{width:9px;height:9px;border-radius:50%;background:#00AEEF;flex-shrink:0;animation:blink 1.8s infinite;box-shadow:0 0 7px #00AEEF}
+.abox p{font-size:13.5px;color:rgba(255,255,255,0.46);line-height:1.6}
+.muted{color:rgba(255,255,255,0.37)}
+footer{border-top:1px solid rgba(255,255,255,0.07);padding:36px 20px;text-align:center;color:rgba(255,255,255,0.24);font-size:11.5px;position:relative;z-index:1}
+footer a{color:rgba(255,255,255,0.34);text-decoration:none;margin:0 8px}
+footer a:hover{color:#fff}
+.flogo{height:19px;opacity:.34;margin-bottom:13px;filter:brightness(0) invert(1)}
+</style>
+</head>
+<body>
+<div id="pts"></div>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+
+<nav>
+  <a href="https://www.audiocodes.com/livehub" target="_blank"><img src="https://www.audiocodes.com/media/sy5isplz/live-hub-svg-light-webpage-2.svg" class="nlogo" alt="LiveHub" onerror="this.style.display='none'"></a>
+  <ul class="nlinks">
+    <li><a href="#how">How to Enter</a></li>
+    <li><a href="#usecases">Use Cases</a></li>
+    <li><a href="#build">Build</a></li>
+    <li><a href="#prizes">Prizes</a></li>
+    <li><a href="#judges">Judges</a></li>
+    <li><a href="#tools">Video Tools</a></li>
+    <li><a href="#submit" class="ncta">Submit Now</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hbg"></div><div class="hgrid"></div>
+  <div style="position:relative;z-index:1">
+    <div class="ebrow"><span class="edot"></span> Sales Engineers &amp; Pre-Sales &middot; June 22, 2026</div>
+    <h1>Hack<br><em>With A Tone</em></h1>
+    <div class="hsub">Here We Go.</div>
+    <p class="htag">Every day a new AI agent changes a little bit of our modern world.<br>Isn't it time for us to take control?<br><strong>It's your time to shine. Show us what you've got.</strong></p>
+    <div class="dates">
+      <div class="dp"><div class="dpl">Launch</div><div class="dpd">June 22</div><div class="dps">Hackathon begins</div></div>
+      <div class="dp"><div class="dpl">Deadline</div><div class="dpd">June 23</div><div class="dps">Midnight 00:00</div></div>
+      <div class="dp"><div class="dpl">Town Hall</div><div class="dpd">June 30</div><div class="dps">16:30 Israel Time</div></div>
+    </div>
+    <div class="btns">
+      <a href="#submit" class="btn bgold">&#127919; Submit Your Project</a>
+      <a href="https://www.audiocodes.com/login?autoLogin=true" target="_blank" class="btn bghost">Login to LiveHub</a>
+    </div>
+  </div>
+</div>
+
+<hr class="glow-hr">
+<section class="sec" id="demo" style="text-align:center;max-width:660px">
+  <div class="slabel">Try It First</div>
+  <h2 style="margin-bottom:9px">Talk to a live demo agent</h2>
+  <p style="color:rgba(255,255,255,0.42);font-size:14.5px;line-height:1.65;margin-bottom:22px">Call a real LiveHub AI agent before you build your own. Hear what great sounds like.</p>
+  <div class="abox" style="justify-content:center"><div class="adot"></div><p>Demo agent link coming before June 22. Check back here on launch day.</p></div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="how">
+  <div class="slabel">How to Enter</div>
+  <h2>Two things.<br>That's it.</h2>
+  <p class="ssub">No GitHub. No slide deck. Just an agent that works and a video that sells it.</p>
+  <div class="brule">
+    <div style="font-size:26px;margin-bottom:12px">&#127908;</div>
+    <h3>Core Rule: Voice First. Always.</h3>
+    <p>Every submission must be a <strong>callable, working voice AI agent</strong> built on LiveHub. You provide a <strong>DID (Direct Inward Dialing phone number)</strong> or WebRTC link. Judges will call it. It must pick up, converse intelligently, and handle your chosen use case from start to finish.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><div class="stxt"><h4>Pick a use case you believe in</h4><p>Any real-world scenario. The only rule: <strong>you should be proud to say "I built that."</strong></p></div></div>
+    <div class="step"><div class="snum">2</div><div class="stxt"><h4>Build a LiveHub AI Agent that handles it</h4><p>Configure your agent so it handles the full conversation correctly. Judges will call your <strong>DID number</strong> and test it end to end.</p></div></div>
+    <div class="step"><div class="snum">3</div><div class="stxt"><h4>Record a 60-second video — however you want</h4><p>Selfie cam. Screen recording. Full AI commercial. <strong>No rules. Be creative or don't. Totally up to you.</strong></p></div></div>
+    <div class="step"><div class="snum">4</div><div class="stxt"><h4>Submit both before midnight June 23</h4><p>Your DID number with brief test instructions, and your 60-second video. That's the whole submission.</p></div></div>
+  </div>
+  <div class="nbox"><p><strong style="color:#00AEEF">What is a DID?</strong> A Direct Inward Dialing number is a real, callable phone number assigned to your LiveHub AI agent. When someone dials it, your agent answers. You get one when you set up your agent in LiveHub — submit that number so judges can call and test you directly.</p></div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="usecases">
+  <div class="slabel">Inspiration</div>
+  <h2>Example use cases</h2>
+  <p class="ssub">Not mandatory. Start here or go somewhere nobody expected.</p>
+  <div class="g3">
+    <div class="uc"><div class="uci">&#127760;</div><h3>Multilingual Support Bot</h3><p>FAQs, account changes, scheduling across multiple languages with real-time translation.</p></div>
+    <div class="uc"><div class="uci">&#128736;</div><h3>IT Helpdesk Agent</h3><p>Common IT requests, ticket creation, and escalation to a human when needed.</p></div>
+    <div class="uc"><div class="uci">&#128197;</div><h3>Meeting Scheduler</h3><p>Books, reschedules, and cancels appointments via voice with calendar integration.</p></div>
+    <div class="uc"><div class="uci">&#128200;</div><h3>Sales Qualification</h3><p>Qualifies inbound leads via voice and routes them based on their answers.</p></div>
+    <div class="uc"><div class="uci">&#9992;</div><h3>Customer Onboarding</h3><p>Guides new customers through product setup. Handles questions, escalates when stuck.</p></div>
+    <div class="uc"><div class="uci">&#127381;</div><h3>Demo Companion Bot</h3><p>A bot you use live during a customer demo to WOW the room. Pure SE gold.</p></div>
+    <div class="uc"><div class="uci">&#128065;</div><h3>Accessibility Agent</h3><p>Real-time translation or voice assistance for hearing-impaired users.</p></div>
+    <div class="uc"><div class="uci">&#9881;</div><h3>Workflow Automation</h3><p>LiveHub integrated with CRM or ERP for real-time data retrieval during calls.</p></div>
+    <div class="uc"><div class="uci">&#127918;</div><h3>Creative Wild Card</h3><p>Voice games, IoT, educational tools. Anything. Surprise us.</p></div>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="build">
+  <div class="slabel">Build Your Agent</div>
+  <h2>Everything you need</h2>
+  <p class="ssub">Docs, login, tutorials, and a prompt guide to make your agent genuinely great.</p>
+  <div class="rl" style="margin-bottom:44px">
+    <a href="https://techdocs.audiocodes.com/livehub/" target="_blank"><div class="rli">&#128216;</div><div><span class="rln">LiveHub Full Documentation</span><span class="rld">techdocs.audiocodes.com/livehub</span></div><div class="rla">&rarr;</div></a>
+    <a href="https://techdocs.audiocodes.com/livehub/Content/AI-Agents/Managing%20-AI-agents.htm" target="_blank"><div class="rli">&#129302;</div><div><span class="rln">AI Agents Introduction and Guide</span><span class="rld">Set up agents, tools, flows and topologies</span></div><div class="rla">&rarr;</div></a>
+    <a href="https://www.audiocodes.com/login?autoLogin=true" target="_blank"><div class="rli">&#128273;</div><div><span class="rln">Login to LiveHub Portal</span><span class="rld">Sign in and start building right now</span></div><div class="rla">&rarr;</div></a>
+    <a href="https://www.audiocodes.com/login?autoSignup=true" target="_blank"><div class="rli">&#10024;</div><div><span class="rln">Sign Up Free — $10 credit included</span><span class="rld">No credit card needed</span></div><div class="rla">&rarr;</div></a>
+    <a href="https://www.youtube.com/playlist?list=PLkVTVChsJS2ewZBNED36Z7Mg7ppSTR96d" target="_blank"><div class="rli">&#9654;</div><div><span class="rln">YouTube Tutorial Playlist</span><span class="rld">Step-by-step guides to building AI agents</span></div><div class="rla">&rarr;</div></a>
+  </div>
+  <div class="slabel">Platform Capabilities</div>
+  <h2 style="font-size:clamp(21px,3.3vw,32px);margin-bottom:22px">What you can use inside LiveHub</h2>
+  <div class="g4" style="margin-bottom:40px">
+    <div class="card"><div class="ci">&#128172;</div><h3>Natural language setup</h3><p>Build agents with plain-language prompts. No code required.</p></div>
+    <div class="card"><div class="ci">&#128279;</div><h3>External integrations</h3><p>Connect to CRMs, calendars, databases via API tools.</p></div>
+    <div class="card"><div class="ci">&#128196;</div><h3>Knowledge sources (RAG)</h3><p>Upload docs and your agent answers accurately.</p></div>
+    <div class="card"><div class="ci">&#127757;</div><h3>Multi-language</h3><p>50+ languages. Real-time translation built in.</p></div>
+    <div class="card"><div class="ci">&#128101;</div><h3>Live agent assist</h3><p>AI assists a human agent in real time.</p></div>
+    <div class="card"><div class="ci">&#128260;</div><h3>Call transfer</h3><p>Escalate seamlessly to a human when needed.</p></div>
+    <div class="card"><div class="ci">&#128202;</div><h3>Post-call analysis</h3><p>Auto-analyze every call for insights.</p></div>
+    <div class="card"><div class="ci">&#9889;</div><h3>Real-time LLM</h3><p>Ultra-low latency. Feels instant.</p></div>
+  </div>
+  <div class="slabel">Prompt Tips</div>
+  <h2 style="font-size:clamp(19px,2.8vw,30px);margin-bottom:11px">Writing a great agent prompt</h2>
+  <p style="color:rgba(255,255,255,0.42);font-size:13.5px;margin-bottom:16px;max-width:540px;line-height:1.65">The quality of your prompt is the quality of your agent.</p>
+  <div class="g2">
+    <div class="tip"><h4>Basic prompt structure</h4><pre>### Identity
+You are [name], a friendly voice agent
+for [company] [department].
+
+### Context
+[Background about the product/service]
+
+### Objective
+- [Task 1] / - [Task 2]
+
+### Instructions
+1. Ask the caller for their name.
+2. Determine their intent.
+3. Use the get_slots tool.
+
+### Format
+Keep answers short.
+Never use HTML or markdown.
+You communicate through speech.</pre></div>
+    <div class="tip"><h4>Voice-specific best practices</h4><pre>1. Always declare voice mode:
+"You communicate through speech.
+Avoid long responses, never use
+HTML or markdown."
+
+2. Use numbered steps:
+"Follow steps in order. Ask up to
+one question per response."
+
+3. Be explicit about tools:
+"Use get_appointments with
+date set to today's date."
+
+4. For branching:
+"If caller says yes, go to step 3.
+If no, end the call politely."</pre></div>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="submit">
+  <div class="slabel">Submit Your Work</div>
+  <h2>Ready? Here's the folder.</h2>
+  <p class="ssub">Your DID number and your video. Drop them in before midnight June 23.</p>
+  <div class="sub-box">
+    <h2>&#128193; Submission Folder</h2>
+    <p>Name your folder <strong>Firstname_Lastname</strong> or <strong>Team_Name</strong>.<br>Drop in your DID number with brief test instructions and your 60-second video.</p>
+    <div class="dbadge">&#9200; June 23, 2026 at 00:00 Midnight</div><br>
+    <a href="#" class="btn bgold" style="opacity:0.5;pointer-events:none;display:inline-flex">Folder Link Coming Soon</a>
+    <p style="margin-top:11px;font-size:11.5px;color:rgba(255,255,255,0.22)">Link shared before June 22 launch day.</p>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="prizes">
+  <div class="slabel">Win Big</div>
+  <h2>The Prizes &#127942;</h2>
+  <p class="ssub">Four categories. Four chances to win.</p>
+  <div class="pwrap">
+    <table class="ptbl">
+      <thead><tr><th>Category</th><th>Prize</th><th>Bonus</th></tr></thead>
+      <tbody>
+        <tr><td>&#127942; Best Overall Agent</td><td><span class="pamt">&#8362;1,500</span> per person</td><td class="muted">All-Hands feature + LinkedIn shoutout</td></tr>
+        <tr><td>&#127774; Most Creative</td><td><span class="pamt">&#8362;1,000</span> per person</td><td class="muted">Product team deep-dive session</td></tr>
+        <tr><td>&#128188; Best Business Impact</td><td><span class="pamt">&#8362;1,000</span> per person</td><td class="muted">Fast-track demo to sales leadership</td></tr>
+        <tr><td>&#128153; People's Choice</td><td><span class="pamt">&#8362;500</span> per person</td><td class="muted">Voted live at Town Hall</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="judging">
+  <div class="slabel">How You Are Scored</div>
+  <h2>Judging criteria</h2>
+  <p class="ssub">Five areas. Judges call your DID and test the full flow from start to finish.</p>
+  <div class="scores" style="margin-bottom:20px">
+    <div class="srow"><div class="sname">Business relevance &amp; use case logic</div><div class="strk"><div class="sfil" style="width:25%"></div></div><div class="spct">25%</div></div>
+    <div class="srow"><div class="sname">Voice experience &amp; flow quality</div><div class="strk"><div class="sfil" style="width:25%"></div></div><div class="spct">25%</div></div>
+    <div class="srow"><div class="sname">Innovation &amp; creativity</div><div class="strk"><div class="sfil" style="width:20%"></div></div><div class="spct">20%</div></div>
+    <div class="srow"><div class="sname">LiveHub feature usage</div><div class="strk"><div class="sfil" style="width:20%"></div></div><div class="spct">20%</div></div>
+    <div class="srow"><div class="sname">Video pitch</div><div class="strk"><div class="sfil" style="width:10%"></div></div><div class="spct">10%</div></div>
+  </div>
+  <div class="nbox"><p><strong style="color:#00AEEF">What judges actually do:</strong> They dial your DID, follow your test instructions, and test the full flow. A great idea with a broken agent scores low. A focused, working agent on a simple use case scores high.</p></div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="judges">
+  <div class="slabel">The Panel</div>
+  <h2>Meet the Judges</h2>
+  <p class="ssub">Three senior leaders. Every DID gets called. Every video gets watched.</p>
+  <div class="g3">
+    <div class="jcard"><div class="jav">&#127775;</div><h3>Yehuda Herscovici</h3><div class="jrole">VP Product</div></div>
+    <div class="jcard"><div class="jav">&#127775;</div><h3>Ofer Nimtsovich</h3><div class="jrole">COO, Global Services</div></div>
+    <div class="jcard"><div class="jav">&#127775;</div><h3>Alex Agranov</h3><div class="jrole">System Engineering Team Leader</div></div>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="townhall">
+  <div class="slabel">June 30</div>
+  <h2>The Awards Town Hall</h2>
+  <p class="ssub">Think Eurovision. But for voice bots. Winners showcased, prizes revealed, everyone celebrated.</p>
+  <div class="thbox">
+    <h3>Global Town Hall</h3>
+    <div class="thsub">June 30, 2026 — join from anywhere</div>
+    <p style="color:rgba(255,255,255,0.46);font-size:13.5px;line-height:1.65;max-width:460px">Based in Australia or another time zone? We pre-record with you beforehand. Your moment still happens live on screen.</p>
+    <div class="tzrow">
+      <div class="tz"><div class="tzr">Israel</div><div class="tzt">16:30</div><div class="tzz">IDT (UTC+3)</div></div>
+      <div class="tz"><div class="tzr">London</div><div class="tzt">14:30</div><div class="tzz">BST (UTC+1)</div></div>
+      <div class="tz"><div class="tzr">Central EU</div><div class="tzt">15:30</div><div class="tzz">CEST (UTC+2)</div></div>
+      <div class="tz"><div class="tzr">New York</div><div class="tzt">09:30</div><div class="tzz">EDT (UTC-4)</div></div>
+      <div class="tz"><div class="tzr">Los Angeles</div><div class="tzt">06:30</div><div class="tzz">PDT (UTC-7)</div></div>
+      <div class="tz"><div class="tzr">Sydney</div><div class="tzt">23:30</div><div class="tzz">AEST (UTC+10)</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<section class="sec" id="tools">
+  <div class="slabel">Make Your Video</div>
+  <h2>Free AI video tools</h2>
+  <p class="ssub">No budget. No rules. Pick one and ship something you're proud of.</p>
+  <div class="g3">
+    <div class="tc"><div class="ttop"><div class="temi">&#127916;</div><div><h3>HeyGen</h3><span class="ttag">Free · 3 videos/month</span></div></div><p>AI avatar presenter. Type your script, get a professional lip-synced video. 175+ languages.</p><a href="https://www.heygen.com" target="_blank">heygen.com &rarr;</a></div>
+    <div class="tc"><div class="ttop"><div class="temi">&#9986;</div><div><h3>CapCut</h3><span class="ttag">Free · No watermark</span></div></div><p>Record, auto-captions, music, clean export. Selfie clip to polished video in minutes.</p><a href="https://www.capcut.com" target="_blank">capcut.com &rarr;</a></div>
+    <div class="tc"><div class="ttop"><div class="temi">&#129302;</div><div><h3>InVideo AI</h3><span class="ttag">Free tier</span></div></div><p>Type your script. Stock footage, narration, captions, music — auto-assembled.</p><a href="https://invideo.io" target="_blank">invideo.io &rarr;</a></div>
+    <div class="tc"><div class="ttop"><div class="temi">&#127908;</div><div><h3>ElevenLabs</h3><span class="ttag">Free · 10 min/month</span></div></div><p>The best AI voices. Natural voiceover in any language. Your agent uses voice — so should your pitch.</p><a href="https://elevenlabs.io" target="_blank">elevenlabs.io &rarr;</a></div>
+    <div class="tc"><div class="ttop"><div class="temi">&#127925;</div><div><h3>Suno</h3><span class="ttag">Free · AI music</span></div></div><p>Generate custom background music in seconds. Any genre, any mood. Completely AI-made.</p><a href="https://suno.com" target="_blank">suno.com &rarr;</a></div>
+    <div class="tc"><div class="ttop"><div class="temi">&#128250;</div><div><h3>Vmaker</h3><span class="ttag">Free · 30 min/month</span></div></div><p>Screen and face recorded simultaneously. Auto-subtitles. Perfect for live demo recordings.</p><a href="https://www.vmaker.com" target="_blank">vmaker.com &rarr;</a></div>
+  </div>
+  <div style="margin-top:18px;padding:14px 18px;background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.15);border-radius:12px">
+    <p style="font-size:12.5px;color:rgba(255,255,255,0.46);line-height:1.7"><strong style="color:#F5A623">The fast combo:</strong> Vmaker for face and screen recording, CapCut for captions, Suno for background music, ElevenLabs for a voiceover intro. Under 30 minutes. Genuinely impressive.</p>
+  </div>
+</section>
+
+<hr class="glow-hr">
+<footer>
+  <img src="https://www.audiocodes.com/media/sy5isplz/live-hub-svg-light-webpage-2.svg" class="flogo" alt="LiveHub" onerror="this.style.display='none'">
+  <p style="margin-bottom:9px"><a href="https://www.audiocodes.com/livehub" target="_blank">LiveHub</a><a href="https://techdocs.audiocodes.com/livehub/" target="_blank">Docs</a><a href="https://www.audiocodes.com/login?autoLogin=true" target="_blank">Login</a><a href="https://www.youtube.com/playlist?list=PLkVTVChsJS2ewZBNED36Z7Mg7ppSTR96d" target="_blank">YouTube</a></p>
+  <p>LiveHub Hack With A Tone &middot; June 22 to 30, 2026 &middot; AudioCodes Internal Event</p>
+  <p style="margin-top:4px">&copy; 2026 AudioCodes Limited. All rights reserved.</p>
+</footer>
+<script>
+const c=document.getElementById('pts');
+['rgba(0,174,239,0.5)','rgba(0,87,168,0.42)','rgba(245,166,35,0.35)','rgba(255,255,255,0.22)'].forEach(col=>{
+  for(let i=0;i<8;i++){const p=document.createElement('div');p.className='pt';const s=Math.random()*3+1.5;p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${col};animation-duration:${Math.random()*16+10}s;animation-delay:${Math.random()*14}s;box-shadow:0 0 ${s*2.5}px ${col}`;c.appendChild(p);}
+});
+</script>
+</body>
+</html>
