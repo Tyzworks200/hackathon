@@ -61,6 +61,8 @@ h1.hero-t em{font-style:italic;color:transparent;background:linear-gradient(135d
 .bgold:hover{transform:translateY(-2px);box-shadow:0 4px 44px rgba(245,166,35,0.6)}
 .bghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.2)}
 .bghost:hover{border-color:rgba(0,174,239,0.55);background:rgba(0,174,239,0.08);transform:translateY(-2px)}
+.dp.dp-now{border-color:rgba(245,166,35,0.5);animation:nowglow 2s ease-in-out infinite alternate}.dp.dp-now .dp-l{color:#F5A623}@keyframes nowglow{0%{box-shadow:0 0 12px rgba(245,166,35,0.2),0 0 0 1px rgba(245,166,35,0.3)}100%{box-shadow:0 0 28px rgba(245,166,35,0.45),0 0 0 2px rgba(245,166,35,0.5)}}
+.bprize{background:linear-gradient(135deg,rgba(245,166,35,0.15),rgba(245,166,35,0.05));color:#F5A623;border:2px solid rgba(245,166,35,0.5);position:relative;overflow:hidden;animation:prizeglow 2s ease-in-out infinite alternate}.bprize::before{content:"";position:absolute;top:-50%;left:-60%;width:220%;height:220%;background:linear-gradient(45deg,transparent 35%,rgba(255,255,255,0.12) 50%,transparent 65%);animation:shimmer2 2.5s infinite}.bprize:hover{background:linear-gradient(135deg,rgba(245,166,35,0.28),rgba(245,166,35,0.1));border-color:rgba(245,166,35,0.8);transform:translateY(-2px);box-shadow:0 4px 44px rgba(245,166,35,0.5)!important}@keyframes prizeglow{0%{box-shadow:0 0 16px rgba(245,166,35,0.3),0 0 32px rgba(245,166,35,0.1)}100%{box-shadow:0 0 28px rgba(245,166,35,0.55),0 0 56px rgba(245,166,35,0.2)}}@keyframes shimmer2{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .scroll-hint{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,0.3);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:12px;animation:bounce 2.5s ease-in-out infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
@@ -234,6 +236,72 @@ footer a:hover{color:#fff}
 .flogo{height:21px;opacity:.36;margin-bottom:14px;filter:brightness(0) invert(1)}
 .info-pill{display:inline-flex;align-items:center;gap:8px;padding:14px 20px;background:rgba(0,174,239,0.06);border:1px solid rgba(0,174,239,0.16);border-radius:14px;font-size:13.5px;color:rgba(255,255,255,0.52);line-height:1.68}
 .info-pill strong{color:#00AEEF}
+
+@media(max-width:768px){
+  nav{padding:0 16px;height:56px}
+  .nlinks{display:none}
+  .ncta{font-size:12px!important;padding:7px 14px!important}
+  .hero{padding:72px 18px 48px;min-height:100svh}
+  h1.hero-t{font-size:clamp(48px,14vw,72px);line-height:.92}
+  .hero-accent{font-size:clamp(16px,5vw,22px)}
+  .hero-tag{font-size:15px;max-width:100%}
+  .date-row{gap:8px}
+  .dp{padding:13px 16px;min-width:0;flex:1;min-width:110px}
+  .dp-d{font-size:20px}
+  .btns{flex-direction:column;align-items:center;gap:10px}
+  .btn{width:100%;max-width:320px;justify-content:center;font-size:14px;padding:13px 20px}
+  .sec{padding:64px 18px}
+  h2.sh{font-size:clamp(26px,7vw,38px)}
+  .ssub{font-size:15px}
+  .want-grid{grid-template-columns:1fr;gap:14px}
+  .want-card{padding:26px 22px}
+  .want-emoji{font-size:36px}
+  .want-card h3{font-size:17px}
+  .want-card .want-num{font-size:44px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .cap-grid{grid-template-columns:repeat(2,1fr)}
+  .criteria-list{gap:10px}
+  .crit{flex-wrap:wrap;padding:14px 16px;gap:10px}
+  .crit-icon{width:28px;font-size:18px}
+  .crit-name{width:calc(100% - 42px);font-size:13.5px}
+  .crit-bar{flex:1;min-width:120px}
+  .crit-pct{width:34px}
+  .submit-steps{grid-template-columns:1fr;gap:14px}
+  .sstep{padding:22px 20px}
+  .sub-box{padding:32px 20px}
+  .dbadge{font-size:15px;padding:10px 18px}
+  .demo-outer{padding:36px 22px;border-radius:22px}
+  .demo-ring{width:72px;height:72px;font-size:28px}
+  .phone-card{flex-direction:column;gap:12px;padding:20px 24px;border-radius:16px}
+  .phone-num{font-size:clamp(26px,8vw,38px);text-align:center}
+  .phone-sub{text-align:center}
+  .prize-cards{grid-template-columns:1fr;gap:14px}
+  .prize-card{padding:28px 20px}
+  .prize-amount{font-size:44px}
+  .prize-card.peoples .prize-amount{font-size:19px}
+  .jcard{padding:24px 18px}
+  .tzrow{gap:8px}
+  .tz{min-width:100px;padding:10px 14px}
+  .tzt{font-size:18px}
+  .tip-grid{grid-template-columns:1fr}
+  .fun-note{flex-direction:column;gap:10px}
+  .rl a{padding:12px 14px;gap:12px}
+  .rln{font-size:13px}
+  .thbox{padding:28px 20px}
+  .thbox h3{font-size:22px}
+  .info-pill{flex-direction:column;gap:6px;text-align:center}
+  .did-tip{flex-direction:column;gap:6px;text-align:left}
+  .scroll-hint{margin-top:16px}
+}
+@media(max-width:480px){
+  .dp{min-width:90px;padding:11px 12px}
+  .dp-d{font-size:18px}
+  .dp-s{font-size:9px}
+  .cap-grid{grid-template-columns:1fr}
+  .phone-card{padding:18px 18px}
+  .phone-num{font-size:clamp(22px,9vw,32px)}
+  nav .ncta{display:none}
+}
 </style>
 </head>
 <body>
@@ -266,12 +334,13 @@ footer a:hover{color:#fff}
       <strong>It's your time to shine. Show us what you've got! 🚀</strong>
     </p>
     <div class="date-row">
-      <div class="dp"><div class="dp-l">Start Date</div><div class="dp-d">June 22</div><div class="dp-s">Hackathon kicks off 🚀</div></div>
-      <div class="dp"><div class="dp-l">Deadline</div><div class="dp-d">June 23</div><div class="dp-s">Midnight — don't be late! ⏰</div></div>
+      <div class="dp dp-now"><div class="dp-l">⚡ Start Building</div><div class="dp-d">Right Now</div><div class="dp-s">You can start today! 🚀</div></div>
+      <div class="dp"><div class="dp-l">Submit By</div><div class="dp-d">June 22</div><div class="dp-s">Midnight — don't be late! ⏰</div></div>
       <div class="dp"><div class="dp-l">Town Hall</div><div class="dp-d">June 30</div><div class="dp-s">16:30 Israel Time 🏆</div></div>
     </div>
     <div class="btns">
       <a href="#what" class="btn bgold">What do we want from you? ↓</a>
+      <a href="#prizes" class="btn bprize">🏆 What's the prize? ✨</a>
       <a href="https://www.audiocodes.com/login?autoLogin=true" target="_blank" class="btn bghost">🔑 Login to LiveHub</a>
     </div>
     <div class="scroll-hint">
@@ -302,7 +371,7 @@ footer a:hover{color:#fff}
       <span class="want-emoji">🤖</span>
       <span class="want-tag">Build the thing</span>
       <h3>A live, callable LiveHub AI voice agent with a real phone number</h3>
-      <p>Fire up LiveHub, build your agent, give it a number. Judges will literally call it. Your agent needs to pick up, have a real conversation, and handle your scenario from hello to goodbye. Make it work — then make it shine.</p>
+      <p>Fire up LiveHub, build your agent, give it a phone number. Judges will literally call it. Your agent needs to pick up, have a real conversation, and handle your scenario from hello to goodbye. Make it work — then make it shine.</p>
     </div>
     <div class="want-card">
       <div class="want-num">03</div>
@@ -315,7 +384,7 @@ footer a:hover{color:#fff}
 
   <div class="info-pill" style="margin-bottom:36px">
     <span>💡</span>
-    <span><strong>What's a DID?</strong> A Direct Inward Dialing number is a real, callable phone number your LiveHub agent answers when someone dials it. You get one inside LiveHub when you set up your agent. That number is your submission — judges call it to test you!</span>
+    <span><strong>What's a phone number?</strong> A real, callable phone number assigned to your agent your LiveHub agent answers when someone dials it. You get one inside LiveHub when you set up your agent. That number is your submission — judges call it to test you!</span>
   </div>
 
   <div style="margin-top:8px">
@@ -341,7 +410,7 @@ footer a:hover{color:#fff}
 
   <div class="criteria-list">
     <div class="crit"><div class="crit-icon">💼</div><div class="crit-name">Business relevance &amp; use case logic</div><div class="crit-bar"><div class="crit-fill" style="width:25%"></div></div><div class="crit-pct">25%</div></div>
-    <div class="crit"><div class="crit-icon">🎤</div><div class="crit-name">Voice experience &amp; conversation flow</div><div class="crit-bar"><div class="crit-fill" style="width:25%"></div></div><div class="crit-pct">25%</div></div>
+    <div class="crit"><div class="crit-icon">🎤</div><div class="crit-name">Agent flow &amp; voice experience</div><div class="crit-bar"><div class="crit-fill" style="width:25%"></div></div><div class="crit-pct">25%</div></div>
     <div class="crit"><div class="crit-icon">💡</div><div class="crit-name">Innovation &amp; creativity</div><div class="crit-bar"><div class="crit-fill" style="width:20%"></div></div><div class="crit-pct">20%</div></div>
     <div class="crit"><div class="crit-icon">⚡</div><div class="crit-name">LiveHub feature usage</div><div class="crit-bar"><div class="crit-fill" style="width:20%"></div></div><div class="crit-pct">20%</div></div>
     <div class="crit"><div class="crit-icon">🎬</div><div class="crit-name">Video pitch</div><div class="crit-bar"><div class="crit-fill" style="width:10%"></div></div><div class="crit-pct">10%</div></div>
@@ -349,7 +418,7 @@ footer a:hover{color:#fff}
 
   <div class="fun-note" style="margin-bottom:52px">
     <div class="fun-note-icon">🕵️</div>
-    <div><p><strong>Real talk from the judges:</strong> They'll dial your Number, follow your test instructions, and actually try to have a real conversation with your agent. A brilliant idea with a broken flow scores low. A focused, simple agent that works flawlessly scores high. Get it working first — then add the magic! ✨</p></div>
+    <div><p><strong>Real talk from the judges:</strong> They'll dial your phone number, follow your test instructions, and actually try to have a real conversation with your agent. A brilliant idea with a broken flow scores low. A focused, simple agent that works flawlessly scores high. Get it working first — then add the magic! ✨</p></div>
   </div>
 
   <div class="slabel"><span class="slabel-num">👥</span> Meet The Panel</div>
@@ -380,7 +449,7 @@ footer a:hover{color:#fff}
       <span class="sstep-emoji">🤖</span>
       <div class="sstep-num">2</div>
       <h4>Build your LiveHub agent</h4>
-      <p>Log in to LiveHub, create your AI agent, assign it a <strong>Number phone number</strong>. Call it yourself. Make sure it works perfectly end to end before you submit.</p>
+      <p>Log in to LiveHub, create your AI agent, assign it a <strong>phone number</strong>. Call it yourself. Make sure it works perfectly end to end before you submit.</p>
     </div>
     <div class="sstep">
       <span class="sstep-emoji">🎬</span>
@@ -392,19 +461,19 @@ footer a:hover{color:#fff}
       <span class="sstep-emoji">📁</span>
       <div class="sstep-num">4</div>
       <h4>Drop both in the folder</h4>
-      <p>Your <strong>Number</strong> + brief test instructions + your video, into the folder below. Name it Firstname_Lastname. Done! Go celebrate 🥳</p>
+      <p>Your <strong>phone number</strong> + brief test instructions + your video, into the folder below. Name it Firstname_Lastname. Done! Go celebrate 🥳</p>
     </div>
   </div>
 
   <div class="sub-box">
     <h2>📁 Submission Folder</h2>
-    <p>Name your folder <strong>Firstname_Lastname</strong> or <strong>Team_Name</strong>.<br>Drop in your Number number with test instructions and your 60-second video.</p>
+    <p>Name your folder <strong>Firstname_Lastname</strong> or <strong>Team_Name</strong>.<br>Drop in your phone number with test instructions and your 60-second video.</p>
     <div class="dbadge">⏰ Deadline: June 23, 2026 at Midnight 00:00</div><br>
     <a href="#" class="btn bgold" style="opacity:0.55;pointer-events:none;display:inline-flex">📂 Folder Link Coming Soon</a>
     <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.24)">🔔 Link shared with everyone before June 22 start date.</p>
-    <div class="Number-tip">
+    <div class="did-tip">
       <span>📱</span>
-      <span><strong>Reminder:</strong> Include your number + what to ask the agent (e.g. "Call and ask about pricing for the Pro plan") + your video file.</span>
+      <span><strong>Reminder:</strong> Include your phone number + what to ask the agent (e.g. "Call and ask about pricing for the Pro plan") + your video file.</span>
     </div>
   </div>
 </section>
