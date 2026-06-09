@@ -10,8 +10,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:#04101F;color:#F0F4FA;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-
-/* PARTICLES */
 #pts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .pt{position:absolute;border-radius:50%;animation:up linear infinite;opacity:0}
 @keyframes up{0%{transform:translateY(100vh);opacity:0}10%{opacity:1}90%{opacity:.5}100%{transform:translateY(-5vh);opacity:0}}
@@ -20,8 +18,6 @@ body{font-family:'DM Sans',sans-serif;background:#04101F;color:#F0F4FA;overflow-
 .o2{width:480px;height:480px;background:rgba(0,174,239,0.09);bottom:-130px;left:-130px;animation-delay:-4s}
 .o3{width:300px;height:300px;background:rgba(245,166,35,0.07);top:40%;left:45%;animation-delay:-2s}
 @keyframes orbanim{0%{opacity:.5;transform:scale(1)}100%{opacity:1;transform:scale(1.15)}}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:999;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(4,16,31,0.94);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,174,239,0.12)}
 .nlogo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nlogo{height:22px;filter:brightness(0) invert(1);opacity:.85}
@@ -29,8 +25,6 @@ nav{position:sticky;top:0;z-index:999;height:58px;display:flex;align-items:cente
 .nav-count{display:flex;align-items:center;gap:7px;background:rgba(0,174,239,0.1);border:1px solid rgba(0,174,239,0.25);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;color:#00AEEF}
 .nav-dot{width:7px;height:7px;border-radius:50%;background:#00AEEF;animation:blink 1.8s infinite;box-shadow:0 0 8px #00AEEF}
 @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 8px #00AEEF}50%{opacity:.15;box-shadow:none}}
-
-/* HERO */
 .hero{text-align:center;padding:64px 24px 48px;position:relative;z-index:1}
 .hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,87,168,0.28),transparent 60%);pointer-events:none}
 .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,174,239,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,174,239,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)}
@@ -40,8 +34,6 @@ h1{font-family:'DM Serif Display',serif;font-size:clamp(40px,7vw,82px);line-heig
 h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00AEEF,#72F5FF,#A0FFFF);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 28px rgba(0,174,239,0.5))}
 .hero-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(255,255,255,0.5);line-height:1.7;max-width:480px;margin:0 auto 36px}
 .hero-sub strong{color:#fff}
-
-/* COUNTDOWN */
 .countdown-wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:44px}
 .cd{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:16px 22px;text-align:center;min-width:88px;position:relative;overflow:hidden;transition:all .25s}
 .cd::after{content:'';position:absolute;top:-50%;left:-60%;width:220%;height:220%;background:linear-gradient(45deg,transparent 35%,rgba(255,255,255,0.025) 50%,transparent 65%);animation:shim 4s infinite}
@@ -51,12 +43,8 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .cd.urgent .cd-n{color:#F5A623;text-shadow:0 0 20px rgba(245,166,35,0.5)}
 .cd.urgent{border-color:rgba(245,166,35,0.3);animation:urgentpulse 2s ease-in-out infinite alternate}
 @keyframes urgentpulse{0%{box-shadow:0 0 0 0 rgba(245,166,35,0.1)}100%{box-shadow:0 0 16px 4px rgba(245,166,35,0.15)}}
-
-/* MAIN LAYOUT */
 .main{max-width:1100px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1;display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start}
-
-/* SIGN-UP FORM */
-.form-card{background:linear-gradient(135deg,rgba(0,87,168,0.14),rgba(0,174,239,0.07));border:1.5px solid rgba(0,174,239,0.28);border-radius:24px;padding:32px;position:relative;overflow:hidden;position:sticky;top:78px}
+.form-card{background:linear-gradient(135deg,rgba(0,87,168,0.14),rgba(0,174,239,0.07));border:1.5px solid rgba(0,174,239,0.28);border-radius:24px;padding:32px;position:sticky;top:78px;overflow:hidden}
 .form-card::before{content:'';position:absolute;top:0;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,rgba(0,174,239,0.8),transparent)}
 .form-card::after{content:'';position:absolute;bottom:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(0,174,239,0.07),transparent 70%);pointer-events:none}
 .form-title{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;margin-bottom:6px}
@@ -70,21 +58,14 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn-submit{width:100%;background:linear-gradient(135deg,#F5A623,#FFD060);color:#1A0D00;font-size:14.5px;font-weight:700;padding:14px 20px;border-radius:100px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .22s;box-shadow:0 0 24px rgba(245,166,35,0.3);margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 4px 40px rgba(245,166,35,0.55)}
-.btn-submit:active{transform:translateY(0)}
 .btn-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
 .form-note{text-align:center;font-size:11px;color:rgba(255,255,255,0.24);margin-top:12px;line-height:1.6}
-
-/* SUCCESS STATE */
 .success-state{display:none;text-align:center;padding:20px 0}
 .success-icon{font-size:52px;margin-bottom:16px;animation:popin .5s cubic-bezier(0.175,0.885,0.32,1.275)}
 @keyframes popin{0%{transform:scale(0)}100%{transform:scale(1)}}
 .success-state h3{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:8px}
 .success-state p{font-size:13px;color:rgba(255,255,255,0.46);line-height:1.65}
-
-/* RIGHT COLUMN */
 .right-col{display:flex;flex-direction:column;gap:20px}
-
-/* STATS ROW */
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .stat{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px 16px;text-align:center;transition:all .22s}
 .stat:hover{border-color:rgba(0,174,239,0.28);transform:translateY(-2px)}
@@ -92,8 +73,6 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .stat-l{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.36)}
 .stat.gold .stat-n{color:#F5A623;text-shadow:0 0 20px rgba(245,166,35,0.4)}
 .stat.cyan .stat-n{color:#00AEEF;text-shadow:0 0 20px rgba(0,174,239,0.4)}
-
-/* HYPE FEED */
 .hype-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:20px;overflow:hidden}
 .hype-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .hype-title{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#00AEEF;display:flex;align-items:center;gap:7px}
@@ -103,10 +82,7 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .hype-item{display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(0,174,239,0.05);border:1px solid rgba(0,174,239,0.1);border-radius:10px;animation:slideIn .4s ease-out;font-size:12.5px;color:rgba(255,255,255,0.7)}
 @keyframes slideIn{0%{opacity:0;transform:translateX(-12px)}100%{opacity:1;transform:translateX(0)}}
 .hype-emoji{font-size:16px;flex-shrink:0}
-.hype-name{font-weight:600;color:#fff}
 .hype-time{margin-left:auto;font-size:10.5px;color:rgba(255,255,255,0.28);flex-shrink:0}
-
-/* LEADERBOARD */
 .lb-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:20px;overflow:hidden}
 .lb-header{padding:18px 22px 14px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .lb-title{font-family:'DM Serif Display',serif;font-size:20px;color:#fff}
@@ -114,13 +90,13 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .lb-filter{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.44);cursor:pointer;transition:all .18s}
 .lb-filter.active,.lb-filter:hover{background:rgba(0,174,239,0.1);border-color:rgba(0,174,239,0.3);color:#00AEEF}
 .lb-list{padding:10px 12px}
-.lb-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;transition:all .18s;cursor:default}
+.lb-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;transition:all .18s}
 .lb-row:hover{background:rgba(255,255,255,0.03)}
 .lb-rank{font-family:'DM Serif Display',serif;font-size:18px;color:rgba(255,255,255,0.22);width:28px;text-align:center;flex-shrink:0;font-style:italic}
 .lb-row.top-1 .lb-rank{color:#F5A623;font-size:20px}
 .lb-row.top-2 .lb-rank{color:#C8D8E8}
 .lb-row.top-3 .lb-rank{color:#D08848}
-.lb-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#0057A8,#00AEEF);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:700;color:#fff;text-transform:uppercase}
+.lb-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:700;color:#fff;text-transform:uppercase}
 .lb-info{flex:1;min-width:0}
 .lb-name{font-size:13.5px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lb-region{font-size:11px;color:rgba(255,255,255,0.36);margin-top:1px}
@@ -132,8 +108,6 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .lb-join-time{font-size:10px;color:rgba(255,255,255,0.22);flex-shrink:0;margin-left:6px}
 .lb-empty{text-align:center;padding:44px 20px;color:rgba(255,255,255,0.28);font-size:13.5px;line-height:1.7}
 .lb-empty-icon{font-size:36px;margin-bottom:12px;display:block}
-
-/* REGION BREAKDOWN */
 .region-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:20px}
 .region-title{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#00AEEF;margin-bottom:16px}
 .region-list{display:flex;flex-direction:column;gap:9px}
@@ -144,40 +118,12 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .region-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,#0057A8,#00AEEF);transition:width .6s cubic-bezier(0.34,1.56,0.64,1);position:relative}
 .region-bar::after{content:'';position:absolute;right:-4px;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:50%;background:#00AEEF;box-shadow:0 0 8px rgba(0,174,239,0.7)}
 .region-count{font-size:12px;font-weight:700;color:#00AEEF;width:20px;text-align:right;flex-shrink:0}
-
-/* TOAST */
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:linear-gradient(135deg,rgba(0,87,168,0.95),rgba(4,16,31,0.98));border:1px solid rgba(0,174,239,0.35);border-radius:100px;padding:12px 24px;font-size:13.5px;font-weight:600;color:#fff;z-index:9999;transition:transform .35s cubic-bezier(0.34,1.56,0.64,1);white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,0.4);pointer-events:none;display:flex;align-items:center;gap:9px}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
-@media(max-width:900px){
-  .main{grid-template-columns:1fr;gap:20px}
-  .form-card{position:static}
-  .stats-row{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:520px){
-  nav{padding:0 16px}
-  .hero{padding:48px 18px 36px}
-  .main{padding:0 16px 60px}
-  .stats-row{grid-template-columns:repeat(3,1fr);gap:8px}
-  .stat{padding:14px 10px}
-  .stat-n{font-size:30px}
-  .countdown-wrap{gap:8px}
-  .cd{padding:12px 14px;min-width:72px}
-  .cd-n{font-size:26px}
-  .form-card{padding:22px 18px}
-  .field-row{grid-template-columns:1fr}
-}
-
-@keyframes sparkle{0%,100%{opacity:0;transform:scale(0) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(180deg)}}
-@keyframes shimmer2{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-
-/* FOMO BANNER */
 .fomo-banner{background:linear-gradient(135deg,rgba(245,166,35,0.1),rgba(0,87,168,0.1));border:1px solid rgba(245,166,35,0.25);border-radius:14px;padding:12px 18px;margin-bottom:18px;display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);position:relative;overflow:hidden}
 .fomo-banner::before{content:'';position:absolute;top:-50%;left:-60%;width:220%;height:220%;background:linear-gradient(45deg,transparent 35%,rgba(255,255,255,0.04) 50%,transparent 65%);animation:shimmer2 3s infinite}
 .fomo-banner strong{color:#F5A623}
 .fomo-pulse{width:9px;height:9px;border-radius:50%;background:#F5A623;flex-shrink:0;animation:blink 1.2s infinite;box-shadow:0 0 8px rgba(245,166,35,0.7)}
-
-/* PRIZE TEASER */
 .prize-teaser{display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(135deg,rgba(245,166,35,0.1),rgba(0,87,168,0.08));border:1.5px solid rgba(245,166,35,0.3);border-radius:16px;padding:14px 18px;margin-bottom:20px;text-decoration:none;transition:all .2s;position:relative;overflow:hidden}
 .prize-teaser::before{content:'';position:absolute;top:-50%;left:-60%;width:220%;height:220%;background:linear-gradient(45deg,transparent 35%,rgba(255,255,255,0.06) 50%,transparent 65%);animation:shimmer2 2.5s infinite}
 .prize-teaser:hover{border-color:rgba(245,166,35,0.6);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,166,35,0.15)}
@@ -185,49 +131,30 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
 .prize-icon{font-size:28px;filter:drop-shadow(0 0 8px rgba(245,166,35,0.5))}
 .prize-text strong{display:block;font-size:13.5px;font-weight:700;color:#F5A623;margin-bottom:2px}
 .prize-text span{font-size:11.5px;color:rgba(255,255,255,0.42)}
-.hype-item.fresh{background:rgba(0,174,239,0.12);border-color:rgba(0,174,239,0.28)}
-
-/* MOBILE */
+.spinner{width:18px;height:18px;border:2px solid rgba(0,0,0,0.15);border-top-color:#1A0D00;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0) rotate(0deg)}50%{opacity:1;transform:scale(1) rotate(180deg)}}
+@keyframes shimmer2{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 @media(max-width:900px){.main{grid-template-columns:1fr!important;gap:20px!important}.form-card{position:static!important}}
 @media(max-width:680px){
-  nav{padding:0 14px!important;height:52px!important}
-  .nav-title{display:none!important}
+  nav{padding:0 14px!important;height:52px!important}.nav-title{display:none!important}
   .hero{padding:40px 20px 28px!important}
-  h1{font-size:34px!important;line-height:1.08!important;padding:0 8px!important}
-  h1 em{padding-right:8px!important}
+  h1{font-size:34px!important;line-height:1.08!important}
   .hero-sub{font-size:13.5px!important;max-width:100%!important}
-  .countdown-wrap{gap:7px!important}
-  .cd{padding:11px 13px!important;min-width:68px!important}
-  .cd-n{font-size:26px!important}
-  .main{padding:0 14px 56px!important;gap:16px!important}
-  .form-card{padding:20px 16px!important}
+  .countdown-wrap{gap:7px!important}.cd{padding:11px 13px!important;min-width:68px!important}.cd-n{font-size:26px!important}
+  .main{padding:0 14px 56px!important;gap:16px!important}.form-card{padding:20px 16px!important}
   .field-row{grid-template-columns:1fr!important}
-  .stats-row{gap:8px!important}
-  .stat{padding:13px 8px!important}
-  .stat-n{font-size:30px!important}
-  .stat-l{font-size:9px!important}
-  .lb-header{flex-direction:column!important;align-items:flex-start!important;gap:10px!important}
-  .lb-filters{flex-wrap:wrap!important;gap:5px!important}
-  .lb-row{padding:8px 10px!important;gap:8px!important}
-  .lb-name{font-size:12.5px!important}
-  .lb-region{font-size:10px!important}
-  .lb-join-time{display:none!important}
-  .lb-avatar{width:30px!important;height:30px!important;font-size:12px!important}
-  .badge{font-size:9.5px!important;padding:3px 8px!important}
-  .hype-feed{max-height:160px!important}
-  .region-name{width:80px!important;font-size:12px!important}
-  .prize-teaser{flex-direction:column!important;align-items:flex-start!important}
+  .stats-row{gap:8px!important}.stat{padding:13px 8px!important}.stat-n{font-size:30px!important}.stat-l{font-size:9px!important}
+  .lb-header{flex-direction:column!important;align-items:flex-start!important;gap:10px!important}.lb-filters{flex-wrap:wrap!important;gap:5px!important}
+  .lb-row{padding:8px 10px!important;gap:8px!important}.lb-name{font-size:12.5px!important}.lb-join-time{display:none!important}
+  .lb-avatar{width:30px!important;height:30px!important;font-size:12px!important}.badge{font-size:9.5px!important;padding:3px 8px!important}
+  .region-name{width:80px!important;font-size:12px!important}.prize-teaser{flex-direction:column!important;align-items:flex-start!important}
   .fomo-banner{font-size:12px!important}
 }
-@media(max-width:400px){
-  .cd{min-width:58px!important;padding:9px 10px!important}
-  .cd-n{font-size:22px!important}
-  .stat-n{font-size:26px!important}
-}
+@media(max-width:400px){.cd{min-width:58px!important;padding:9px 10px!important}.cd-n{font-size:22px!important}.stat-n{font-size:26px!important}}
 </style>
 </head>
 <body>
-
 <div id="pts"></div>
 <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 
@@ -236,20 +163,15 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
     <img src="https://www.audiocodes.com/media/sy5isplz/live-hub-svg-light-webpage-2.svg" class="nlogo" alt="LiveHub" onerror="this.style.display='none'">
     <span class="nav-title">Hack With A Tone 2026</span>
   </a>
-  <div class="nav-count">
-    <span class="nav-dot"></span>
-    <span id="nav-total">0</span> registered
-  </div>
+  <div class="nav-count"><span class="nav-dot"></span><span id="nav-total">0</span> registered</div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hbg"></div><div class="hgrid"></div>
   <div style="position:relative;z-index:1">
     <div class="ebrow"><span class="edot"></span> Who's building? · June 22–23, 2026</div>
     <h1>Are you<br><em>in?</em></h1>
-    <p class="hero-sub">Sign up below and claim your spot. <strong>Every name on this board is someone you'll need to beat.</strong> The list is growing , don't be the last to join.</p>
-
+    <p class="hero-sub">Sign up below and claim your spot. <strong>Every name on this board is someone you'll need to beat.</strong> The list is growing — don't be the last to join.</p>
     <div class="countdown-wrap">
       <div class="cd" id="cd-days"><span class="cd-n" id="d-days">--</span><span class="cd-l">Days</span></div>
       <div class="cd" id="cd-hours"><span class="cd-n" id="d-hours">--</span><span class="cd-l">Hours</span></div>
@@ -259,15 +181,12 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
-
-  <!-- SIGN-UP FORM -->
   <div class="form-card">
     <div id="form-state">
       <div class="fomo-banner">
         <div class="fomo-pulse"></div>
-        <span>🔥 <strong id="fomo-count">0</strong> people are already building , don't get left behind!</span>
+        <span>🔥 <strong id="fomo-count">0</strong> people are already building — don't get left behind!</span>
       </div>
       <a href="https://tyzworks200.github.io/hackathon#prizes" target="_blank" class="prize-teaser">
         <div class="prize-teaser-inner">
@@ -280,7 +199,7 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
         <span style="font-size:18px;color:rgba(245,166,35,0.6);position:relative;z-index:1">✨</span>
       </a>
       <div class="form-title">Claim your spot 🎯</div>
-      <p class="form-sub">Takes 10 seconds. Shows up on the board instantly.</p>
+      <p class="form-sub">Takes 10 seconds. Shows up on the board for everyone instantly.</p>
       <div class="field">
         <label>Your Name</label>
         <input type="text" id="inp-name" placeholder="e.g. Sarah Cohen" maxlength="40" autocomplete="off">
@@ -314,49 +233,35 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
         </div>
       </div>
       <button class="btn-submit" id="btn-join" onclick="handleJoin()">
-        <span>🚀</span> I'm In, Add Me to the Board
+        <span>🚀</span> I'm In — Add Me to the Board
       </button>
-      <p class="form-note">Your name will appear publicly on the leaderboard.<br>Submissions due midnight June 23.</p>
+      <p class="form-note">Your name appears on the shared board — visible to everyone.<br>Submissions due midnight June 23.</p>
     </div>
     <div class="success-state" id="success-state">
       <div class="success-icon">🎉</div>
       <h3>You're on the board!</h3>
-      <p>Welcome to the challenge.<br>Now go build something incredible.<br><br>Submission deadline: <strong style="color:#F5A623">June 23 at midnight.</strong><br><br><a href="https://tyzworks200.github.io/hackathon" target="_blank" style="color:#00AEEF;font-weight:600;font-size:13px;text-decoration:none">← Back to hackathon guide</a></p>
+      <p>Welcome to the challenge.<br>Now go build something incredible.<br><br>
+      Submission deadline: <strong style="color:#F5A623">June 23 at midnight.</strong><br><br>
+      <a href="https://tyzworks200.github.io/hackathon" target="_blank" style="color:#00AEEF;font-weight:600;font-size:13px;text-decoration:none">← Back to hackathon guide</a></p>
       <button class="btn-submit" style="margin-top:22px" onclick="resetForm()">➕ Add Another Person</button>
     </div>
   </div>
 
-  <!-- RIGHT COLUMN -->
   <div class="right-col">
-
-    <!-- STATS -->
     <div class="stats-row">
-      <div class="stat gold">
-        <span class="stat-n" id="stat-total">0</span>
-        <span class="stat-l">Registered</span>
-      </div>
-      <div class="stat cyan">
-        <span class="stat-n" id="stat-building">0</span>
-        <span class="stat-l">Building</span>
-      </div>
-      <div class="stat">
-        <span class="stat-n" id="stat-submitted">0</span>
-        <span class="stat-l" style="color:#4ADE80">Submitted ✅</span>
-      </div>
+      <div class="stat gold"><span class="stat-n" id="stat-total">0</span><span class="stat-l">Registered</span></div>
+      <div class="stat cyan"><span class="stat-n" id="stat-building">0</span><span class="stat-l">Building</span></div>
+      <div class="stat"><span class="stat-n" id="stat-submitted">0</span><span class="stat-l" style="color:#4ADE80">Submitted ✅</span></div>
     </div>
-
-    <!-- HYPE FEED -->
     <div class="hype-card">
       <div class="hype-header">
         <div class="hype-title"><span class="hype-live"></span> Live Activity</div>
-        <span style="font-size:10.5px;color:rgba(255,255,255,0.28)">Real-time</span>
+        <span style="font-size:10.5px;color:rgba(255,255,255,0.28)">Updates every 20s</span>
       </div>
       <div class="hype-feed" id="hype-feed">
-        <div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Be the first to sign up and appear here! 👀</div>
+        <div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Loading live activity…</div>
       </div>
     </div>
-
-    <!-- LEADERBOARD -->
     <div class="lb-card">
       <div class="lb-header">
         <div class="lb-title">Who's In 🏆</div>
@@ -367,470 +272,264 @@ h1 em{font-style:italic;color:transparent;background:linear-gradient(135deg,#00A
         </div>
       </div>
       <div class="lb-list" id="lb-list">
-        <div class="lb-empty">
-          <span class="lb-empty-icon">👀</span>
-          No one has signed up yet.<br>Be the first name on the board.
-        </div>
+        <div class="lb-empty"><span class="lb-empty-icon">⏳</span>Loading the board…</div>
       </div>
     </div>
-
-    <!-- REGION BREAKDOWN -->
     <div class="region-card">
       <div class="region-title">🌍 Regions Represented</div>
       <div class="region-list" id="region-list">
-        <div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Sign-ups will appear here by region…</div>
+        <div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Loading regions…</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── SHARED AIRTABLE STORAGE, DIRECT AIRTABLE VERSION ───────────────────────
-// This is the simple version you asked for: the HTML talks directly to Airtable.
-// Paste your Airtable token below. Since this file is public, anyone can see it.
-// For a tiny hackathon signup board, that may be acceptable for you. Just know it can be abused for spam.
-
-const AIRTABLE_TOKEN = 'patEiGQBxc3HsWqPj.ac89d7a5e4209b4ace713c5e767ecba842f47073f289a4545490f5a5a3956e65';
-const AIRTABLE_BASE_ID = 'appeRiX8P7of1JzMX';
-const AIRTABLE_TABLE_NAME = 'Registrations';
-const AIRTABLE_API_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`;
+// ── Airtable config ────────────────────────────────────────────────────────────
+const AT_TOKEN = 'patEiGQBxc3HsWqPj.ac89d7a5e4209b4ace713c5e767ecba842f47073f289a4545490f5a5a3956e65';
+const AT_BASE  = 'appeRiX8P7of1JzMX';
+const AT_TABLE = 'Registrations';
+const AT_URL   = `https://api.airtable.com/v0/${AT_BASE}/${encodeURIComponent(AT_TABLE)}`;
+const AT_HDR   = { 'Authorization': `Bearer ${AT_TOKEN}`, 'Content-Type': 'application/json' };
+// ──────────────────────────────────────────────────────────────────────────────
 
 let participants = [];
 let activeFilter = 'all';
-let storageReady = false;
-let loadingNow = false;
+let isFetching   = false;
 
-function apiConfigured() {
-  return AIRTABLE_TOKEN && !AIRTABLE_TOKEN.includes('PASTE_YOUR_AIRTABLE_TOKEN_HERE');
-}
-
-function airtableHeaders() {
+// ── Map Airtable record → local object ───────────────────────────────────────
+function mapRec(r) {
   return {
-    'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
-    'Content-Type': 'application/json',
+    id:     r.id,
+    name:   r.fields.Name   || '',
+    region: r.fields.Region || '',
+    solo:   r.fields.Solo   || '',
+    status: r.fields.Status || 'building',
+    ts:     Number(r.fields.Timestamp) || Date.now(),
   };
 }
 
-function mapAirtableRecord(record) {
-  const fields = record.fields || {};
-  return {
-    id: record.id,
-    name: fields.Name || '',
-    region: fields.Region || '',
-    solo: fields.Solo || '',
-    status: fields.Status || 'building',
-    ts: Number(fields.Timestamp) || Date.now(),
-  };
-}
-
-async function fetchAirtableRecords() {
-  let allRecords = [];
-  let offset = '';
-
-  do {
-    const url = new URL(AIRTABLE_API_URL);
-    url.searchParams.set('sort[0][field]', 'Timestamp');
-    url.searchParams.set('sort[0][direction]', 'asc');
-    if (offset) url.searchParams.set('offset', offset);
-
-    const response = await fetch(url.toString(), {
-      method: 'GET',
-      headers: airtableHeaders(),
-    });
-
-    const data = await response.json().catch(() => null);
-
-    if (!response.ok) {
-      const err = new Error((data && data.error && data.error.message) || `Airtable request failed with status ${response.status}`);
-      err.status = response.status;
-      err.details = data;
-      throw err;
-    }
-
-    allRecords = allRecords.concat(data.records || []);
-    offset = data.offset || '';
-  } while (offset);
-
-  return allRecords.map(mapAirtableRecord).filter(p => p.name);
-}
-
-async function createAirtableRecord({ name, region, solo }) {
-  const existing = await fetchAirtableRecords();
-  const dupe = existing.find(p => String(p.name).toLowerCase() === String(name).toLowerCase());
-  if (dupe) {
-    const err = new Error('Already registered');
-    err.status = 409;
-    throw err;
-  }
-
-  const response = await fetch(AIRTABLE_API_URL, {
-    method: 'POST',
-    headers: airtableHeaders(),
-    body: JSON.stringify({
-      records: [
-        {
-          fields: {
-            Name: name,
-            Region: region,
-            Solo: solo,
-            Status: 'building',
-            Timestamp: Date.now(),
-          },
-        },
-      ],
-    }),
-  });
-
-  const data = await response.json().catch(() => null);
-
-  if (!response.ok) {
-    const err = new Error((data && data.error && data.error.message) || `Airtable request failed with status ${response.status}`);
-    err.status = response.status;
-    err.details = data;
-    throw err;
-  }
-
-  return mapAirtableRecord(data.records[0]);
-}
-
-async function apiFetch(path, options = {}) {
-  if (path === '/api/registrations') {
-    return { records: await fetchAirtableRecords() };
-  }
-
-  if (path === '/api/register') {
-    const body = JSON.parse(options.body || '{}');
-    return { record: await createAirtableRecord(body) };
-  }
-
-  const err = new Error('Unknown API path');
-  err.status = 404;
-  throw err;
-}
-
-function setLoadingState() {
-  const list = document.getElementById('lb-list');
-  const feed = document.getElementById('hype-feed');
-  const regions = document.getElementById('region-list');
-  if (list) list.innerHTML = `<div class="lb-empty"><span class="lb-empty-icon">⏳</span>Loading the shared board…</div>`;
-  if (feed) feed.innerHTML = `<div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Pulling the latest names from Airtable…</div>`;
-  if (regions) regions.innerHTML = `<div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Loading regions…</div>`;
-}
-
-function setSetupState(message) {
-  const list = document.getElementById('lb-list');
-  const feed = document.getElementById('hype-feed');
-  const regions = document.getElementById('region-list');
-  if (list) list.innerHTML = `<div class="lb-empty"><span class="lb-empty-icon">⚙️</span>${escHtml(message)}</div>`;
-  if (feed) feed.innerHTML = `<div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.32);font-size:12.5px;line-height:1.6">Shared mode is waiting for the Airtable token.<br>Once connected, everyone will see the same board.</div>`;
-  if (regions) regions.innerHTML = `<div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Regions will appear after Airtable is connected…</div>`;
-}
-
-
-function airtableErrorText(e) {
-  const status = e && e.status ? `Status ${e.status}: ` : '';
-  const airtableType = e && e.details && e.details.error && e.details.error.type ? `${e.details.error.type} - ` : '';
-  const msg = e && e.message ? e.message : 'Unknown error';
-  return `${status}${airtableType}${msg}`;
-}
-
-async function loadParticipants({ silent = false } = {}) {
-  if (!apiConfigured()) {
-    participants = [];
-    storageReady = false;
-    renderAll();
-    setSetupState('Paste your Airtable token in AIRTABLE_TOKEN to activate the shared leaderboard.');
-    return;
-  }
-
-  if (loadingNow) return;
-  loadingNow = true;
-  if (!silent) setLoadingState();
-
+// ── Fetch all participants from Airtable ─────────────────────────────────────
+// KEY FIX: single fetch, no double-call for dupe check.
+// Dupe check is done against the already-loaded participants array.
+async function fetchAll() {
+  if (isFetching) return;
+  isFetching = true;
   try {
-    const data = await apiFetch('/api/registrations');
-    participants = Array.isArray(data.records) ? data.records : [];
-    storageReady = true;
+    let all = [], offset = null;
+    do {
+      const url = AT_URL + '?sort[0][field]=Timestamp&sort[0][direction]=asc' + (offset ? `&offset=${offset}` : '');
+      const res = await fetch(url, { headers: AT_HDR });
+      if (!res.ok) { console.error('Airtable fetch error', res.status); break; }
+      const d = await res.json();
+      all = all.concat((d.records || []).map(mapRec).filter(p => p.name));
+      offset = d.offset || null;
+    } while (offset);
+    participants = all;
     renderAll();
-  } catch (e) {
-    console.error(e);
-    storageReady = false;
-    participants = [];
+  } catch(e) {
+    console.error('Network error loading board:', e);
+    // Don't clear existing data on network error — show what we have
     renderAll();
-    const msg = airtableErrorText(e);
-    setSetupState('Airtable error: ' + msg);
-    if (!silent) showToast('⚠️ Airtable error: ' + escHtml(msg));
+    showToast('⚠️ Could not refresh. Check your connection.');
   } finally {
-    loadingNow = false;
+    isFetching = false;
   }
 }
 
-// ─── COUNTDOWN ───────────────────────────────────────────────────────────────
+// ── Save a new registration ──────────────────────────────────────────────────
+async function saveRec(name, region, solo) {
+  const res = await fetch(AT_URL, {
+    method: 'POST',
+    headers: AT_HDR,
+    body: JSON.stringify({ records: [{ fields: {
+      Name: name, Region: region, Solo: solo,
+      Status: 'building', Timestamp: Date.now()
+    }}]})
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error((err.error && err.error.message) || `Error ${res.status}`);
+  }
+  const d = await res.json();
+  return mapRec(d.records[0]);
+}
+
+// ── Countdown ────────────────────────────────────────────────────────────────
 function updateCountdown() {
-  const target = new Date('2026-06-23T23:59:59');
-  const now = new Date();
-  const diff = target - now;
+  const diff = new Date('2026-06-23T23:59:59') - new Date();
   if (diff <= 0) {
-    ['d-days','d-hours','d-mins','d-secs'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent = '00'; });
+    ['d-days','d-hours','d-mins','d-secs'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent='00'; });
     return;
   }
-  const days  = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins  = Math.floor((diff % 3600000) / 60000);
-  const secs  = Math.floor((diff % 60000) / 1000);
-  const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); };
-  set('d-days', days); set('d-hours', hours); set('d-mins', mins); set('d-secs', secs);
+  const pad = n => String(Math.floor(n)).padStart(2,'0');
+  const set = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
+  set('d-days',  pad(diff/86400000));
+  set('d-hours', pad((diff%86400000)/3600000));
+  set('d-mins',  pad((diff%3600000)/60000));
+  set('d-secs',  pad((diff%60000)/1000));
   const cdDays = document.getElementById('cd-days');
-  if (cdDays) { if (days < 1) cdDays.classList.add('urgent'); else cdDays.classList.remove('urgent'); }
+  if (cdDays) { Math.floor(diff/86400000) < 1 ? cdDays.classList.add('urgent') : cdDays.classList.remove('urgent'); }
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ─── RENDER ───────────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function timeAgo(ts) {
-  const parsed = Number(ts) || Date.now();
-  const mins = Math.floor((Date.now() - parsed) / 60000);
-  if (mins < 1)  return 'just now';
-  if (mins < 60) return `${mins}m ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24)  return `${hrs}h ago`;
-  return `${Math.floor(hrs/24)}d ago`;
+  const m = Math.floor((Date.now() - Number(ts)) / 60000);
+  if (m < 1)  return 'just now';
+  if (m < 60) return `${m}m ago`;
+  const h = Math.floor(m/60);
+  if (h < 24) return `${h}h ago`;
+  return `${Math.floor(h/24)}d ago`;
 }
-
-function initials(name) {
-  return String(name || '').split(' ').slice(0,2).map(w => w[0] || '').join('').toUpperCase() || '?';
+function initials(n){ return String(n||'').split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?'; }
+function avatarColor(n){
+  const c=['linear-gradient(135deg,#0057A8,#00AEEF)','linear-gradient(135deg,#0D7C66,#00C8A0)','linear-gradient(135deg,#6A3093,#A044FF)','linear-gradient(135deg,#B34D00,#F5A623)','linear-gradient(135deg,#005A9C,#0099CC)'];
+  let h=0; for(let x of String(n||'')) h+=x.charCodeAt(0); return c[h%c.length];
 }
-
-function avatarColor(name) {
-  const colors = [
-    'linear-gradient(135deg,#0057A8,#00AEEF)',
-    'linear-gradient(135deg,#0D7C66,#00C8A0)',
-    'linear-gradient(135deg,#6A3093,#A044FF)',
-    'linear-gradient(135deg,#B34D00,#F5A623)',
-    'linear-gradient(135deg,#005A9C,#0099CC)',
-  ];
-  let hash = 0;
-  for (let c of String(name || '')) hash += c.charCodeAt(0);
-  return colors[hash % colors.length];
-}
-
-function statusBadge(status) {
-  if (status === 'submitted') return `<span class="badge badge-submitted">✅ Submitted</span>`;
-  if (status === 'building')  return `<span class="badge badge-building">🔨 Building…</span>`;
+function statusBadge(s){
+  if(s==='submitted') return `<span class="badge badge-submitted">✅ Submitted</span>`;
+  if(s==='building')  return `<span class="badge badge-building">🔨 Building…</span>`;
   return `<span class="badge badge-joined">👋 Just joined</span>`;
+}
+function esc(s){ return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderAll() {
+  const total     = participants.length;
+  const building  = participants.filter(p=>p.status==='building').length;
+  const submitted = participants.filter(p=>p.status==='submitted').length;
+  const set = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
+  set('stat-total',total); set('stat-building',building); set('stat-submitted',submitted);
+  set('nav-total',total);  set('fomo-count',total);
+  renderLeaderboard(); renderRegions(); renderHypeFeed();
 }
 
 function renderLeaderboard() {
-  const list = document.getElementById('lb-list');
-  if (!list) return;
-  const filtered = activeFilter === 'all'
-    ? [...participants]
-    : participants.filter(p => p.status === activeFilter);
-  filtered.sort((a,b) => (Number(a.ts) || 0) - (Number(b.ts) || 0));
-
-  if (filtered.length === 0) {
-    list.innerHTML = `<div class="lb-empty"><span class="lb-empty-icon">👀</span>No one has signed up yet.<br>Be the first name on the board.</div>`;
-    return;
-  }
-
-  list.innerHTML = filtered.map((p, i) => {
-    const rank = i + 1;
-    const cls = rank === 1 ? 'top-1' : rank === 2 ? 'top-2' : rank === 3 ? 'top-3' : '';
-    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+  const list = document.getElementById('lb-list'); if(!list) return;
+  const f = activeFilter==='all' ? [...participants] : participants.filter(p=>p.status===activeFilter);
+  f.sort((a,b)=>Number(a.ts)-Number(b.ts));
+  if (!f.length) { list.innerHTML=`<div class="lb-empty"><span class="lb-empty-icon">👀</span>No one has signed up yet.<br>Be the first name on the board.</div>`; return; }
+  list.innerHTML = f.map((p,i) => {
+    const r=i+1, cls=r===1?'top-1':r===2?'top-2':r===3?'top-3':'', medal=r===1?'🥇':r===2?'🥈':r===3?'🥉':r;
     return `<div class="lb-row ${cls}">
       <div class="lb-rank">${medal}</div>
       <div class="lb-avatar" style="background:${avatarColor(p.name)}">${initials(p.name)}</div>
-      <div class="lb-info">
-        <div class="lb-name">${escHtml(p.name)}</div>
-        <div class="lb-region">${escHtml(p.region)} · ${escHtml(p.solo)}</div>
-      </div>
+      <div class="lb-info"><div class="lb-name">${esc(p.name)}</div><div class="lb-region">${esc(p.region)} · ${esc(p.solo)}</div></div>
       <div class="lb-status">${statusBadge(p.status)}</div>
       <div class="lb-join-time">${timeAgo(p.ts)}</div>
     </div>`;
   }).join('');
 }
 
-function renderStats() {
-  const total = participants.length;
-  const fomoEl = document.getElementById('fomo-count');
-  if (fomoEl) fomoEl.textContent = total;
-  const building = participants.filter(p => p.status === 'building').length;
-  const submitted = participants.filter(p => p.status === 'submitted').length;
-  const setEl = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
-  setEl('stat-total', total);
-  setEl('stat-building', building);
-  setEl('stat-submitted', submitted);
-  setEl('nav-total', total);
-}
-
 function renderRegions() {
-  const wrap = document.getElementById('region-list');
-  if (!wrap) return;
+  const wrap = document.getElementById('region-list'); if(!wrap) return;
   const counts = {};
-  for (const p of participants) {
-    if (!p.region) continue;
-    counts[p.region] = (counts[p.region] || 0) + 1;
-  }
-  const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]);
-  if (sorted.length === 0) {
-    wrap.innerHTML = `<div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Sign-ups will appear here by region…</div>`;
-    return;
-  }
+  for (const p of participants) { if(p.region) counts[p.region]=(counts[p.region]||0)+1; }
+  const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  if (!sorted.length) { wrap.innerHTML=`<div style="text-align:center;padding:16px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Sign-ups will appear here by region…</div>`; return; }
   const max = sorted[0][1];
-  wrap.innerHTML = sorted.map(([region, count]) => {
-    const parts = String(region).split(' ');
-    const flag = parts[0];
-    const name = parts.slice(1).join(' ');
-    const pct = Math.max(8, Math.round((count / max) * 100));
-    return `<div class="region-row">
-      <span class="region-flag">${escHtml(flag)}</span>
-      <span class="region-name">${escHtml(name)}</span>
-      <div class="region-bar-wrap"><div class="region-bar" style="width:${pct}%"></div></div>
-      <span class="region-count">${count}</span>
-    </div>`;
+  wrap.innerHTML = sorted.map(([region,count]) => {
+    const parts=region.split(' '), flag=parts[0], name=parts.slice(1).join(' ');
+    return `<div class="region-row"><span class="region-flag">${flag}</span><span class="region-name">${esc(name)}</span>
+      <div class="region-bar-wrap"><div class="region-bar" style="width:${Math.max(8,Math.round((count/max)*100))}%"></div></div>
+      <span class="region-count">${count}</span></div>`;
   }).join('');
 }
 
 function renderHypeFeed() {
-  const feed = document.getElementById('hype-feed');
-  if (!feed) return;
-  const sorted = [...participants].sort((a,b) => (Number(b.ts) || 0) - (Number(a.ts) || 0)).slice(0, 8);
-  if (sorted.length === 0) {
-    feed.innerHTML = `<div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Be the first to sign up and appear here! 👀</div>`;
-    return;
-  }
-
-  const msgs = [
-    (p) => `<b>${escHtml(p.name)}</b> just joined from ${escHtml(p.region)}! 🔥`,
-    (p) => `<b>${escHtml(p.name)}</b> is in, ${escHtml(p.solo)} entry! 🚀`,
-    (p) => `${escHtml(p.region)} represent! <b>${escHtml(p.name)}</b> signed up 🎯`,
-    (p) => `<b>${escHtml(p.name)}</b> just added their name to the board 💪`,
-  ];
-  const emojis = ['🔥','🚀','⚡','🎯','💪','🌟','🏆','👾'];
-  feed.innerHTML = sorted.map((p, i) => {
-    const msgFn = msgs[i % msgs.length];
-    return `<div class="hype-item">
-      <span class="hype-emoji">${emojis[i % emojis.length]}</span>
-      <span>${msgFn(p)}</span>
-      <span class="hype-time">${timeAgo(p.ts)}</span>
-    </div>`;
-  }).join('');
+  const feed = document.getElementById('hype-feed'); if(!feed) return;
+  const sorted = [...participants].sort((a,b)=>Number(b.ts)-Number(a.ts)).slice(0,8);
+  if (!sorted.length) { feed.innerHTML=`<div style="text-align:center;padding:20px 0;color:rgba(255,255,255,0.26);font-size:12.5px">Be the first to sign up and appear here! 👀</div>`; return; }
+  const emojis=['🔥','🚀','⚡','🎯','💪','🌟','🏆','👾'];
+  const msgs=[p=>`<b>${esc(p.name)}</b> just joined from ${esc(p.region)}! 🔥`,p=>`<b>${esc(p.name)}</b> is in — ${esc(p.solo)} entry! 🚀`,p=>`${esc(p.region)} represent! <b>${esc(p.name)}</b> signed up 🎯`,p=>`<b>${esc(p.name)}</b> just added their name to the board 💪`];
+  feed.innerHTML = sorted.map((p,i)=>`<div class="hype-item"><span class="hype-emoji">${emojis[i%emojis.length]}</span><span>${msgs[i%msgs.length](p)}</span><span class="hype-time">${timeAgo(p.ts)}</span></div>`).join('');
 }
 
-function renderAll() {
-  renderStats();
-  renderLeaderboard();
-  renderRegions();
-  renderHypeFeed();
-}
-
-// ─── FILTER ───────────────────────────────────────────────────────────────────
-function setFilter(f, el) {
-  activeFilter = f;
-  document.querySelectorAll('.lb-filter').forEach(e => e.classList.remove('active'));
-  if (el) el.classList.add('active');
+// ── Filter ────────────────────────────────────────────────────────────────────
+function setFilter(f,el){
+  activeFilter=f;
+  document.querySelectorAll('.lb-filter').forEach(e=>e.classList.remove('active'));
+  if(el) el.classList.add('active');
   renderLeaderboard();
 }
 
-// ─── SIGN-UP ──────────────────────────────────────────────────────────────────
+// ── Join ──────────────────────────────────────────────────────────────────────
 async function handleJoin() {
   const name   = document.getElementById('inp-name').value.trim();
   const region = document.getElementById('inp-region').value;
   const solo   = document.getElementById('inp-solo').value;
 
-  if (!apiConfigured()) { showToast('⚙️ Paste the Airtable token first.'); return; }
   if (!name)   { showToast('✏️ Please enter your name!'); shakeField('inp-name'); return; }
   if (!region) { showToast('🌍 Please select your region!'); return; }
-  if (!solo)   { showToast('👥 Solo or team, pick one!'); return; }
+  if (!solo)   { showToast('👥 Solo or team — pick one!'); return; }
+
+  // Dupe check against already-loaded data (no extra API call needed!)
+  if (participants.find(p => p.name.toLowerCase() === name.toLowerCase())) {
+    showToast(`👋 ${name} is already on the board!`); return;
+  }
 
   const btn = document.getElementById('btn-join');
   btn.disabled = true;
-  btn.innerHTML = `<span>⏳</span> Adding you…`;
+  btn.innerHTML = `<div class="spinner"></div> Saving…`;
 
   try {
-    const data = await apiFetch('/api/register', {
-      method: 'POST',
-      body: JSON.stringify({ name, region, solo }),
-    });
-
-    if (data && data.record) {
-      participants = [data.record, ...participants.filter(p => p.id !== data.record.id)];
-    }
-
-    await loadParticipants({ silent: true });
+    const newRec = await saveRec(name, region, solo);
+    // Add to local list immediately so user sees it without waiting for re-fetch
+    participants.push(newRec);
+    participants.sort((a,b)=>Number(a.ts)-Number(b.ts));
+    renderAll();
     document.getElementById('form-state').style.display = 'none';
     document.getElementById('success-state').style.display = 'block';
-    showToast(`🎉 ${escHtml(name)} is on the board!`);
-  } catch (e) {
-    console.error(e);
-    if (e.status === 409) {
-      showToast(`👋 ${escHtml(name)} is already on the board!`);
-    } else {
-      showToast('⚠️ Airtable error: ' + escHtml(airtableErrorText(e)));
-    }
+    showToast(`🎉 ${name} is on the board!`);
+    // Quietly re-fetch in background to catch any other new sign-ups
+    setTimeout(() => fetchAll(), 2000);
+  } catch(e) {
+    console.error('Save error:', e);
+    showToast(`❌ Could not save: ${e.message}. Please try again!`);
   } finally {
     btn.disabled = false;
-    btn.innerHTML = `<span>🚀</span> I'm In, Add Me to the Board`;
+    btn.innerHTML = `<span>🚀</span> I'm In — Add Me to the Board`;
   }
 }
 
 function resetForm() {
   document.getElementById('form-state').style.display = 'block';
   document.getElementById('success-state').style.display = 'none';
-  document.getElementById('inp-name').value = '';
-  document.getElementById('inp-region').value = '';
-  document.getElementById('inp-solo').value = '';
+  ['inp-name','inp-region','inp-solo'].forEach(id => { const el=document.getElementById(id); if(el) el.value=''; });
 }
 
 function shakeField(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.style.animation = 'none';
+  const el = document.getElementById(id); if(!el) return;
   el.style.borderColor = 'rgba(239,68,68,0.6)';
-  el.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
-  setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 1200);
+  el.style.boxShadow   = '0 0 0 3px rgba(239,68,68,0.1)';
+  setTimeout(() => { el.style.borderColor=''; el.style.boxShadow=''; }, 1200);
 }
 
-// ─── TOAST ────────────────────────────────────────────────────────────────────
 let toastTimer;
 function showToast(msg) {
-  const t = document.getElementById('toast');
-  if (!t) return;
-  t.innerHTML = msg;
-  t.classList.add('show');
+  const t = document.getElementById('toast'); if(!t) return;
+  t.innerHTML = msg; t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
 }
 
-// ─── UTILS ────────────────────────────────────────────────────────────────────
-function escHtml(s) {
-  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
-}
-
-// ─── PARTICLES ────────────────────────────────────────────────────────────────
-for(let i=0;i<22;i++){const s=document.createElement('div');const sz=Math.random()*5+2;s.style.cssText=`position:fixed;width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;background:rgba(255,255,255,${Math.random()*0.55+0.2});border-radius:50%;animation:sparkle ${Math.random()*4+2}s ease-in-out ${Math.random()*6}s infinite;pointer-events:none;z-index:0;box-shadow:0 0 ${sz*2}px rgba(255,255,255,0.45)`;document.body.appendChild(s);}
+// ── Particles ─────────────────────────────────────────────────────────────────
 const c = document.getElementById('pts');
-['rgba(0,174,239,0.55)','rgba(0,87,168,0.45)','rgba(245,166,35,0.38)','rgba(255,255,255,0.22)'].forEach(col => {
-  for (let i = 0; i < 6; i++) {
-    const p = document.createElement('div'); p.className = 'pt';
-    const s = Math.random() * 4 + 1;
-    p.style.cssText = `width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${col};animation-duration:${Math.random()*18+10}s;animation-delay:${Math.random()*16}s;box-shadow:0 0 ${s*3}px ${col}`;
-    c.appendChild(p);
-  }
+['rgba(0,174,239,0.55)','rgba(0,87,168,0.45)','rgba(245,166,35,0.38)','rgba(255,255,255,0.22)'].forEach(col=>{
+  for(let i=0;i<6;i++){const p=document.createElement('div');p.className='pt';const s=Math.random()*4+1;
+    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${col};animation-duration:${Math.random()*18+10}s;animation-delay:${Math.random()*16}s;box-shadow:0 0 ${s*3}px ${col}`;c.appendChild(p);}
 });
+for(let i=0;i<20;i++){const s=document.createElement('div');const sz=Math.random()*5+2;
+  s.style.cssText=`position:fixed;width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;background:rgba(255,255,255,${Math.random()*0.5+0.15});border-radius:50%;animation:sparkle ${Math.random()*4+2}s ease-in-out ${Math.random()*6}s infinite;pointer-events:none;z-index:0;box-shadow:0 0 ${sz*2}px rgba(255,255,255,0.4)`;document.body.appendChild(s);}
 
-// ─── LIVE REFRESH ─────────────────────────────────────────────────────────────
-// Timestamps update every 30s, and the shared Airtable board refreshes every 20s.
-setInterval(() => { if(storageReady) renderAll(); }, 30000);
-setInterval(() => { if(apiConfigured()) loadParticipants({ silent: true }); }, 20000);
-
-// ─── INIT ─────────────────────────────────────────────────────────────────────
-loadParticipants();
-
+// ── Init + auto-refresh ───────────────────────────────────────────────────────
+fetchAll();
+setInterval(fetchAll, 20000);          // refresh board every 20s
+setInterval(renderAll, 30000);         // refresh timestamps every 30s
 </script>
 </body>
 </html>
